@@ -17,6 +17,14 @@ $(document).ready(function () {
         });
     }
 
+    //virtual page view
+    function vpv(page){
+        track_ga('send', 'pageview', {
+          'page': page,
+          'title': document.title,
+        });
+    }
+
     function track_ga() {
         website_ga = this.gtag || function(){};
         website_ga.apply(this, arguments);
