@@ -8,14 +8,14 @@
         <xpath expr="//script[@id='tracking_code']" position="replace">
             <script
                 id="google_analytics_4_code"
-                type="text/plain"
+                type="text/javascript"
                 data-cookiefirst-category="performance"
                 t-if="website and website.google_analytics_key and not editable"
-                async="1"
+                async="async"
                 t-attf-src="https://www.googletagmanager.com/gtag/js?id={{ website.google_analytics_key }}"
             />
             <script
-                type="text/plain"
+                type="text/javascript"
                 data-cookiefirst-category="performance"
                 t-if="website and website.google_analytics_key and not editable"
             >
