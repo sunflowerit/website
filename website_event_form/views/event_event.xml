@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="view_event_form">
+        <field name="name">website.event.event.form</field>
+        <field name="model">event.event</field>
+        <field name="inherit_id" ref="event.view_event_form"/>
+        <field name="arch" type="xml">
+            <group name="right_event_details" position="after">
+                <group name="website_event_form_details" col="4">
+                    <field name="event_user_name"/>
+                    <field name="event_email"/>
+                    <field name="event_photo" widget='image'/>
+                    <field name="event_url"/>
+                    <field name="event_address"/>
+                    <field name="event_phone_no"/>
+                </group>
+            </group>
+        </field>
+    </record>
+</odoo>
