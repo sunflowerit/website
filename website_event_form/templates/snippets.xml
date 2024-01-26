@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2024 Therp BV License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl). -->
+<odoo>
+    <!-- New Events Form -->
+  <template id="s_event_form" name="Events Form">
+    <section class="oe_snippet_body oe_event_form">
+        <div class="container">
+            <div class="jumbotron mt-3 mb-3">
+                <h2 class="text-center text-primary">Add An Event</h2>
+            </div>
+            <div id="event_process_form">
+                <div class="row">
+                    <div class="col-md-6 form-group mb-2">
+                        <label for="event_user_name">Name</label>
+                        <input type="text" class="form-control"
+                               id="event_user_name"
+                               required="required"
+                               name="event_user_name"
+                               aria-describedby="nameHelp"
+                               placeholder="Enter your name"/>
+                        <small id="nameHelp" class="form-text text-muted"></small>
+                    </div>
+                    <div class="col-md-6 form-group mb-2">
+                        <label for="event_email_address">Email address</label>
+                        <input type="email" class="form-control"
+                               name="event_email"
+                               id="event_email_address"
+                               aria-describedby="emailHelp"
+                               placeholder="Enter email"/>
+                        <small id="emailHelp" class="form-text text-muted"></small>
+                    </div>
+                    <div class="col-md-6 form-group mb-2">
+                        <label for="event_name">Event</label>
+                        <input type="text" class="form-control"
+                               id="event_name"
+                               name="name"
+                               required="required"
+                               aria-describedby="eventHelp"
+                               placeholder="Enter Event Name"/>
+                        <small id="eventHelp" class="form-text text-muted"></small>
+                    </div>
+                    <div class="col-md-6 form-group mb-2">
+                        <label for="event_phone_no">Phone No.</label>
+                        <input type="text" class="form-control"
+                               required="required"
+                               name="event_phone_no"
+                               id="event_phone_no" placeholder="Phone No."/>
+                    </div>
+                    <div class="col-md-6 form-group mb-2">
+                        <label for="event_datetime">Start Date</label>
+                        <input type="text"
+                               id="event_start_date"
+                               name="date_begin"
+                               required="required"
+                               placeholder="2024-01-26 02:39:40"
+                               class="form-control datetimepicker-input"
+                               data-toggle="datetimepicker"
+                               data-date-format="YYYY-MM-DD"/>
+                    </div>
+                    <div class="col-md-6 form-group mb-2">
+                        <label for="event_datetime">End Date</label>
+                        <input type="text"
+                               id="event_end_date"
+                               name="date_end"
+                               required="required"
+                               placeholder="2024-01-26 02:39:40"
+                               class="form-control datetimepicker-input"
+                               data-toggle="datetimepicker"
+                               data-date-format="YYYY-MM-DD"/>
+                    </div>
+                    <div class="col-md-6 form-group mb-2">
+                        <label for="event_address_location">Address Location</label>
+                        <input type="text" class="form-control"
+                               required="required"
+                               name="event_address"
+                               id="event_address_location"
+                               placeholder="Address Location"/>
+                    </div>
+                    <div class="col-md-6 form-group mb-2">
+                        <label for="event_extra_info">Extra Info</label>
+                        <textarea class="form-control"
+                                  name="note"
+                                  id="event_extra_info"
+                                  rows="3"></textarea>
+                    </div>
+                    <div class="col-md-6 form-group mb-2">
+                        <label for="event_website">Website</label>
+                        <input type="text" class="form-control"
+                               name="event_url"
+                               id="event_website"
+                               placeholder="Event Link"/>
+                    </div>
+                    <div class="col-md-6 form-group mb-2">
+                        <div class="mb-3">
+                            <label for="event_photo" class="form-label">Photo</label>
+                            <input class="form-control" name="event_photo"
+                                   type="file"
+                                   required="required"
+                                   id="event_photo"/>
+                        </div>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <button id="event_process_form_btn"
+                                 class="btn btn-primary mb-2 mt-2 btn-lg">Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
+
+    <!-- Add snippets to menu -->
+    <template id="snippets" inherit_id="website.snippets">
+        <xpath expr="//*[@id='snippet_feature']//*[hasclass('o_panel_body')]">
+            <t
+                    t-snippet="website_event_form.s_event_form"
+                    t-thumbnail="/website_event_form/static/description/event.png"
+            />
+        </xpath>
+    </template>
+</odoo>
